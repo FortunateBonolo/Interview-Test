@@ -27,5 +27,24 @@ export class ListComponent implements OnInit {
         console.error('Error fetching contacts:', error);
       }
     );
+  
   }
+
+  evolveHero(hero: Hero): void {
+    const evolveEndpoint = 'http://localhost:4201/evolve';
+
+    const evolvePayload = {
+      name: hero.name,
+      action: 'evolve'
+    };
+
+    this.apiService.post(evolveEndpoint, evolvePayload).subscribe(
+      response => {
+        console.log('Hero evolved successfully:', response);
+      },
+      error => {
+        console.error('Error evolving hero:', error);
+      }
+    );
+}
 }
