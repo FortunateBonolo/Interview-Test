@@ -1,3 +1,8 @@
-<p>
-  list works!
-</p>
+<ul>
+  <li *ngFor="let contact of contacts">
+    <h2>{{ contact.name }}</h2>
+    <h2>{{ contact.power }}</h2>
+    <h2>{{ JSON.stringify(contact.stats) }}</h2>
+
+  </li>
+</ul>
