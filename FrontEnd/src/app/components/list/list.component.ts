@@ -10,6 +10,7 @@ import { Hero } from '../../types/interfaces';
 export class ListComponent implements OnInit {
 
   contacts: Hero[] = [];
+  heroColor: string = ''; 
 
   constructor(private apiService: ApiService) { }
 
@@ -47,9 +48,13 @@ export class ListComponent implements OnInit {
       }
     );
  }
- 
+
  getStatValue(stats: { key: string, value: number }[], statName: string): number {
   const stat = stats.find(s => s.key === statName);
   return stat ? stat.value : 0;
+}
+setRandomHeroColor(): void {
+  const colorOptions = ['color1', 'color2', 'color3', 'color4'];
+  this.heroColor = colorOptions[Math.floor(Math.random() * colorOptions.length)];
 }
 }
