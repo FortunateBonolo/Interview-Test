@@ -46,5 +46,10 @@ export class ListComponent implements OnInit {
         console.error('Error evolving hero:', error);
       }
     );
+ }
+ 
+ getStatValue(stats: { key: string, value: number }[], statName: string): number {
+  const stat = stats.find(s => s.key === statName);
+  return stat ? stat.value : 0;
 }
 }
