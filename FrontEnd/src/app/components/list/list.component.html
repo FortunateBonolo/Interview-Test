@@ -1,8 +1,25 @@
-<ul>
-  <li *ngFor="let contact of contacts">
-    <h2>{{ contact.name }}</h2>
-    <h2>{{ contact.power }}</h2>
-    <h2>{{ JSON.stringify(contact.stats) }}</h2>
+<p>List Component</p>
 
-  </li>
-</ul>
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Power</th>
+      <th>Strength</th>
+      <th>Intelligence</th>
+      <th>Stamina</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let hero of heroes">
+      <td>{{ hero.name }}</td>
+      <td>{{ hero.power }}</td>
+      <td>{{ getStatValue(hero.stats, 'strength') }}</td>
+      <td>{{ getStatValue(hero.stats, 'intelligence') }}</td>
+      <td>{{ getStatValue(hero.stats, 'stamina') }}</td>
+      <td>
+        <button (click)="evolveHero(hero)">Evolve</button>
+      </td>
+    </tr>
+  </tbody>
+</table>

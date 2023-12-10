@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ApiService } from '../../services/api.service'; 
+import { Hero } from '../../types/interfaces'; 
 
 @Component({
   selector: 'app-list',
@@ -8,7 +9,7 @@ import { ApiService } from '../../services/api.service';
 })
 export class ListComponent implements OnInit {
 
-  contacts: any[] = [];
+  contacts: Hero[] = [];
 
   constructor(private apiService: ApiService) { }
 
