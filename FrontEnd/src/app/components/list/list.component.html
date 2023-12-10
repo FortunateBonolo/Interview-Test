@@ -1,5 +1,6 @@
+<h2 class="heading">Tour of Heroes</h2>
+
 <div *ngIf="evolvedHero">
-  <p>Hero updated with Stats:</p>
   <p>Name: {{ evolvedHero.name }}</p>
   <p>Strength: {{ getStatValue(evolvedHero.stats, 'strength') }}</p>
   <p>Intelligence: {{ getStatValue(evolvedHero.stats, 'intelligence') }}</p>
