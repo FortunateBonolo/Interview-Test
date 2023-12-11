@@ -21,7 +21,14 @@ namespace InterviewTest.Controllers
 
         public void evolve(int statIncrease = 5)
         {
-            // Implementation of the evolve method
+            foreach (var stat in stats)
+            {
+                int originalValue = stat.Value;
+                int increaseValue = originalValue / 2 * statIncrease;
+                stat.Value += increaseValue;
+            }
         }
     }
 }
+
+
